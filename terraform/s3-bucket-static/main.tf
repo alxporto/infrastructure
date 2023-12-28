@@ -37,7 +37,7 @@ resource "aws_s3_bucket_ownership_controls" "static_site_bucket" {
 }
 
 resource "aws_s3_bucket_acl" "static_site_bucket" {
-    depends on = {
+    depends_on = {
         aws_s3_bucket_public_access_block.static_site_bucket
         aws_s3_bucket_ownership_controls.static_site_bucket
     }
